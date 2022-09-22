@@ -4,6 +4,7 @@ scala_library(
     name = "greeting",
     srcs = ["src/main/scala/Greeting.scala"],
     deps = [],
+    visibility = ["//src/main/scala/cmdline:__pkg__"],
 )
 
 scala_binary(
