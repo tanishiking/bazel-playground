@@ -21,7 +21,7 @@ scalameta_deps = [
 ]
 
 scala_binary(
-    name = "scala-maven",
+    name = "main",
     main_class = "example.App",
     srcs = ["src/main/scala/example/App.scala"],
     deps = ["@maven//:com_lihaoyi_pprint_2_13"] + scalameta_deps,
