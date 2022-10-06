@@ -1,7 +1,6 @@
-# workspace(name = "specs2_junit_repositories")
-
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
+# rules_scala
 skylib_version = "1.0.3"
 
 http_archive(
