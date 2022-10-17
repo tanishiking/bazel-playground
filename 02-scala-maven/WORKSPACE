@@ -30,7 +30,8 @@ rules_proto_dependencies()
 rules_proto_toolchains()
 
 load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains")
-scala_register_toolchains()
+
+register_toolchains(":transitive_deps_toolchain")
 
 
 # rules_jvm_external

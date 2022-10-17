@@ -1,5 +1,32 @@
 ## Doesn't rules_jvm_external even take care of adding transitive dependencies to the classpath?
 
+They does, but we have to set `dependency_mode = "transitive"` for `rules_scala`.
+https://github.com/bazelbuild/rules_scala/blob/master/docs/dependency-tracking.md
+
+```python
+load("@io_bazel_rules_scala//scala:scala_toolchain.bzl", "scala_toolchain")
+
+scala_toolchain(
+    name = "transitive_deps_toolchain_impl",
+    dependency_mode = "transitive",
+    dependency_tracking_method = "ast",
+    strict_deps_mode = "off",
+)
+
+toolchain(
+    name = "transitive_deps_toolchain",
+    toolchain = ":transitive_deps_toolchain_impl",
+    toolchain_type = "@io_bazel_rules_scala//scala:toolchain_type",
+    visibility = ["//visibility:public"],
+)
+
+# WORKSPACE
+register_toolchains(":transitive_deps_toolchain")
+```
+
+
+### if `dependency_mode = "dilect"`
+
 ```scala
 lazy val root = (project in file("."))
   .settings(
