@@ -13,3 +13,13 @@ toolchain(
     toolchain_type = "@io_bazel_rules_scala//scala:toolchain_type",
     visibility = ["//visibility:public"],
 )
+
+java_binary(
+    name = "resources",
+    main_class = "example.App",
+    srcs = glob(["src/main/java/**/*.java"]),
+    deps = [
+        "@maven//:com_typesafe_config",
+    ],
+    resources = glob(["src/main/resources/*"])
+)
