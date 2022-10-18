@@ -24,5 +24,11 @@ object App {
     val is: InputStream = getClass.getResourceAsStream("/foo.txt")
     val content = scala.io.Source.fromInputStream(is).mkString
     println(content)
+
+    // doesn't work
+    val is2 = resource.openStream
+    val content2 = scala.io.Source.fromInputStream(is).mkString
+    println(content2)
+
   }
 }
