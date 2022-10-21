@@ -3,6 +3,9 @@ package example
 import java.io._
 import java.nio.charset.StandardCharsets
 import java.nio.file.{Files, Paths}
+import java.net.URI
+import java.nio.file.FileSystem
+import java.nio.file.FileSystems
 
 object App {
   def main(args: Array[String]) = {
@@ -25,10 +28,48 @@ object App {
     val content = scala.io.Source.fromInputStream(is).mkString
     println(content)
 
-    // doesn't work
+    // doesn't work (empty string)
     val is2 = resource.openStream
     val content2 = scala.io.Source.fromInputStream(is).mkString
     println(content2)
+
+
+    // doesn't work
+    // Exception in thread "main" java.lang.IllegalArgumentException: URI is not hierarchical
+    //         at java.base/java.io.File.<init>(File.java:420)
+    //         at example.App$.main(App.scala:33)
+    //         at example.App.main(App.scala)
+    // val folder = new File(resource.toURI)
+    // val items = folder.listFiles.toList
+    // println(items)
+    // val ls = getClass.getClassLoader.getResources("*")
+    // import scala.jdk.CollectionConverters._
+    // println(ls.asScala.toList)
+
+    val uri = resource.toURI
+    if (uri.getScheme == "jar") {
+      val jarURI = URI.create(uri.toString.split("!").head)
+      val path = uri.toString.split("!").tail.head
+      println(jarURI)
+      println(path)
+      val jarfs = FileSystems.newFileSystem(jarURI, new java.util.HashMap[String, String]())
+      val p = jarfs.getPath(path)
+      val content = Files.readString(p, StandardCharsets.UTF_8)
+      println(content)
+
+      // /
+      // /foo.txt
+      // /example
+      // /bar.txt
+      // /META-INF
+      import scala.jdk.CollectionConverters._
+      val walk = Files.walk(p.getParent, 1).iterator.asScala
+      walk.foreach { p =>
+        println(p)
+      }
+    }
+
+
 
   }
 }
