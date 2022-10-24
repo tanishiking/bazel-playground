@@ -200,4 +200,92 @@ note that `name` and `BUILD_PATH` should be the same:
 
 if they has different value, bazel create an empty dir (dir whose name is target name).
 
+---
 
+## Running tests using jest
+
+```python
+copy_to_bin(
+    name = "copy_test_files",
+    srcs = glob(_TESTS),
+)
+
+react_scripts_test(
+    name = "test",
+    args = [
+        "--node_options=--require=$(rootpath chdir.js)",
+        "test",
+        "--watchAll=false",
+        "--no-cache",
+        "--no-watchman",
+        "--ci",
+    ],
+    data = _RUNTIME_DEPS + [
+        ":copy_test_files",
+        "@npm//@testing-library/jest-dom",
+        "@npm//@testing-library/react",
+        "@npm//@testing-library/user-event",
+    ],
+)
+```
+
+didn't work out of the box :thinking:
+
+```
+exec ${PAGER:-/usr/bin/less} "$0" || exit 1
+Executing tests from //:test
+-----------------------------------------------------------------------------
+No tests found, exiting with code 1
+Run with `--passWithNoTests` to exit with code 0
+No files found in /private/var/tmp/_bazel_tanishiking/ce7161b25fc9f7d45b56c811d14e52a1/sandbox/darwin-sandbox/3/execroot/ts_jest_cra/bazel-out/darwin-fastbuild/bin/test.sh.runfiles/ts_jest_cra.
+Make sure Jest's configuration does not exclude this directory.
+To set up Jest, make sure a package.json file exists.
+Jest Documentation: https://jestjs.io/docs/configuration
+Pttern:  - 0 matches
+```
+
+adding `react-scripts` wrapper to specify tests by absolute path
+
+```python
+load("@npm//react-scripts:index.bzl", _react_scripts_test = "react_scripts_test")
+
+def react_scripts_test(name, args, srcs, data, **kwargs):
+    for src in srcs:
+        args.extend(["--runTestsByPath", "$(location %s)" % src])
+
+    _react_scripts_test(
+        name = name,
+        data = srcs + data,
+        args = args,
+        **kwargs
+    )
+```
+
+other workaround is applying patch using `patch-package`
+https://github.com/bazelbuild/rules_nodejs/blob/146e52226bd5a80773f814d747ca4b80b7ac1b70/examples/create-react-app/patches/jest-haste-map%2B24.9.0.patch
+
+```diff
+diff --git a/node_modules/jest-haste-map/build/crawlers/node.js b/node_modules/jest-haste-map/build/crawlers/node.js
+index 23985ae..182c7e8 100644
+--- a/node_modules/jest-haste-map/build/crawlers/node.js
++++ b/node_modules/jest-haste-map/build/crawlers/node.js
+@@ -166,7 +166,12 @@ function find(roots, extensions, ignore, callback) {
+ 
+ function findNative(roots, extensions, ignore, callback) {
+   const args = Array.from(roots);
++  args.push('(');
+   args.push('-type', 'f');
++  args.push('-o');
++  args.push('-type', 'l');
++  args.push(')');
++
+ 
+   if (extensions.length) {
+     args.push('(');
+```
+
+looks like `jest` doesn't resolve symlink, and that's why we couldn't find any tests.
+
+maybe we can resolve symlinks by `enableSymlinks` option.
+https://jestjs.io/docs/configuration#haste-object
+https://github.com/facebook/jest/blob/a20bd2c31e126fc998c2407cfc6c1ecf39ead709/packages/jest-haste-map/src/crawlers/node.ts#L141-L145
