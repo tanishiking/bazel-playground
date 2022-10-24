@@ -289,3 +289,5 @@ looks like `jest` doesn't resolve symlink, and that's why we couldn't find any t
 maybe we can resolve symlinks by `enableSymlinks` option.
 https://jestjs.io/docs/configuration#haste-object
 https://github.com/facebook/jest/blob/a20bd2c31e126fc998c2407cfc6c1ecf39ead709/packages/jest-haste-map/src/crawlers/node.ts#L141-L145
+
+We can't override `haste` jest config for CRA https://create-react-app.dev/docs/running-tests/#configuration :\
