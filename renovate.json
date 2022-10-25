@@ -2,5 +2,9 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
+  ],
+  "ignorePaths": [
+     "08-javascript/package.json",
+     "09-ts-jest-cra/package.json"
   ]
 }
