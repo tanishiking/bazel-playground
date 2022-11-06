@@ -5,6 +5,7 @@ npm_link_all_packages(name = "node_modules")
 load("@aspect_bazel_lib//lib:copy_to_bin.bzl", "copy_to_bin")
 load("@npm//:react-app-rewired/package_json.bzl", "bin")
 load("@npm//:eslint/package_json.bzl", eslint_bin = "bin")
+load("@rules_pkg//:pkg.bzl", "pkg_zip")
 
 # Filename conventions described at
 # https://create-react-app.dev/docs/running-tests#filename-conventions
@@ -54,6 +55,17 @@ bin.react_app_rewired(
         "DISABLE_ESLINT_PLUGIN": "true",
     },
     out_dirs = ["build"],
+)
+
+pkg_zip(
+    name = "react_zip",
+    srcs = [":cra"],
+    package_file_name = "react.jar",
+)
+
+java_import(
+    name = "react_jar",
+    jars = [":react_zip"],
 )
 
 copy_to_bin(
@@ -119,5 +131,6 @@ java_binary(
     name = "main",
     main_class = "example.Main",
     srcs = ["java/Main.java"],
-    resources = [":cra"]
+    # resources = [":build_result"]
+    runtime_deps = ["//:react_jar"]
 )

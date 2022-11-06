@@ -1,4 +1,21 @@
 ```
+❯ bazel build //:main
+INFO: Analyzed target //:main (0 packages loaded, 0 targets configured).
+INFO: Found 1 target...
+Target //:main up-to-date:
+  bazel-bin/main.jar
+  bazel-bin/main
+INFO: Elapsed time: 0.825s, Critical Path: 0.15s
+INFO: 2 processes: 1 internal, 1 worker.
+INFO: Build completed successfully, 2 total actions
+
+❯ ./bazel-bin/main
+jar:file:/private/var/tmp/_bazel_tanishiking/248b328882768a29be950d9fd3b5752b/execroot/ts_jest_cra/bazel-out/darwin-fastbuild/bin/react.jar!/build/index.html
+```
+
+---
+
+```
 $ bazel build //:cra
 INFO: Analyzed target //:cra (1161 packages loaded, 12814 targets configured).
 INFO: Found 1 target...
@@ -48,3 +65,4 @@ example/Main.class
 ```
 
 build directory is empty!
+
