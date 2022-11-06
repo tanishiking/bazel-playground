@@ -1,8 +1,10 @@
-load("@bazel_skylib//rules:write_file.bzl", "write_file")
-load("@build_bazel_rules_nodejs//:index.bzl", "copy_to_bin")
-# from @npm//react-scripts/bin:react-scripts
-load("@npm//react-app-rewired:index.bzl", "react_app_rewired")
-load("//:react_scripts_test.bzl", "react_scripts_test")
+load("@npm//:defs.bzl", "npm_link_all_packages")
+
+npm_link_all_packages(name = "node_modules")
+
+load("@aspect_bazel_lib//lib:copy_to_bin.bzl", "copy_to_bin")
+load("@npm//:react-app-rewired/package_json.bzl", "bin")
+load("@npm//:eslint/package_json.bzl", eslint_bin = "bin")
 
 # Filename conventions described at
 # https://create-react-app.dev/docs/running-tests#filename-conventions
@@ -16,14 +18,11 @@ _TESTS = [
 ]
 
 _RUNTIME_DEPS = [
-    "chdir.js",
-    "copy_static_files",
-    "@npm//react",
-    "@npm//react-dom",
+    ":node_modules/react",
+    ":node_modules/react-dom",
+    ":copy_static_files",
 ]
 
-# We don't want to teach react-scripts to include from multiple directories
-# So we copy everything it wants to read to the output "bin" directory
 copy_to_bin(
     name = "copy_static_files",
     srcs = glob(
@@ -39,30 +38,22 @@ copy_to_bin(
     ],
 )
 
-# react-scripts can only work if the working directory is the root of the application.
-# So we'll need to chdir before it runs.
-write_file(
-    name = "write_chdir_script",
-    out = "chdir.js",
-    content = ["process.chdir(__dirname)"],
-)
-
-react_app_rewired(
+bin.react_app_rewired(
     # Note: If you want to change the name make sure you update BUILD_PATH below accordingly
     # https://create-react-app.dev/docs/advanced-configuration/
     name = "build",
-    args = [
-        "--node_options=--require=./$(execpath chdir.js)",
-        "build",
-    ],
-    data = _RUNTIME_DEPS + [
-        "@npm//web-vitals",
-        "@npm//@types",
+    args = ["build"],
+    srcs = _RUNTIME_DEPS + [
+        ":node_modules/typescript",
+        ":node_modules/react-scripts",
+        ":node_modules/web-vitals",
+        ":node_modules/@types"
     ],
     env = {
         "BUILD_PATH": "./build",
+        "DISABLE_ESLINT_PLUGIN": "true",
     },
-    output_dir = True,
+    out_dirs = ["build"],
 )
 
 copy_to_bin(
@@ -70,42 +61,52 @@ copy_to_bin(
     srcs = glob(_TESTS),
 )
 
-react_scripts_test(
+bin.react_app_rewired_test(
     name = "test",
     args = [
-        "--node_options=--require=$(rootpath chdir.js)",
         "test",
         # ibazel is the watch mode for Bazel when running tests
         # Because Bazel is really a CI system that runs locally
         "--watchAll=false",
+        # https://jestjs.io/docs/cli#--cache. Whether to use the cache. Defaults to true. Disable
+        # the cache using --no-cache. Caching is Bazel's job, we don't want non-hermeticity
         "--no-cache",
+        # https://jestjs.io/docs/cli#--watchman. Whether to use watchman for file crawling. Defaults
+        # to true. Disable using --no-watchman. Watching is ibazel's job
         "--no-watchman",
+        # https://jestjs.io/docs/cli#--ci. When this option is provided, Jest will assume it is
+        # running in a CI environment. This changes the behavior when a new snapshot is encountered.
+        # Instead of the regular behavior of storing a new snapshot automatically, it will fail the
+        # test and require Jest to be run with --updateSnapshot.
         "--ci",
-    ],
-    srcs = [
-        "copy_test_files",
+        # Needed for Jest to walk the filesystem to find inputs.
+        # See https://github.com/facebook/jest/pull/9351
+        "--haste",
+        "{\\\"enableSymlinks\\\":\\ true}",
     ],
     data = _RUNTIME_DEPS + [
-        "@npm//@testing-library/jest-dom",
-        "@npm//@testing-library/react",
-        "@npm//@testing-library/user-event",
-    ],
-    # Need to set the pwd to avoid jest needing a runfiles helper
-    # Windows users with permissions can use --enable_runfiles
-    # to make this test work
-    tags = ["no-bazelci-windows"],
+        "copy_test_files",
+        ":node_modules/@testing-library/jest-dom",
+        ":node_modules/@testing-library/react",
+        ":node_modules/@testing-library/user-event",
+        ":node_modules/typescript",
+        ":node_modules/jest-watch-typeahead",
+    ]
 )
 
-react_app_rewired(
+bin.react_app_rewired_binary(
     name = "start",
     args = [
-        "--node_options=--require=$(rootpath chdir.js)",
         "start",
     ],
     data = _RUNTIME_DEPS + [
-        "@npm//@types/react",
-        "@npm//@types/react-dom",
+        ":node_modules/react-scripts",
+        ":node_modules/typescript",
+        ":node_modules/web-vitals",
     ],
+    env = {
+        "DISABLE_ESLINT_PLUGIN": "true",
+    },
     tags = [
         # This tag instructs ibazel to pipe into stdin a event describing actions.
         # ibazel send EOF to stdin by default and `react-scripts start` will stop when getting EOF in stdin.

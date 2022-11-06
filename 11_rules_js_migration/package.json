@@ -1,5 +1,5 @@
 {
-  "name": "09-ts-jest-cra",
+  "name": "11-rules-js-migration",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -42,5 +42,16 @@
   },
   "devDependencies": {
     "react-app-rewired": "^2.2.1"
+  },
+  "pnpm": {
+    "packageExtensions": {
+      "postcss-loader": {
+        "peerDependencies": {
+          "postcss-flexbugs-fixes": "*",
+          "postcss-preset-env": "*",
+          "postcss-normalize": "*"
+        }
+      }
+    }
   }
 }
