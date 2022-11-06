@@ -41,7 +41,7 @@ copy_to_bin(
 bin.react_app_rewired(
     # Note: If you want to change the name make sure you update BUILD_PATH below accordingly
     # https://create-react-app.dev/docs/advanced-configuration/
-    name = "build",
+    name = "cra",
     args = ["build"],
     srcs = _RUNTIME_DEPS + [
         ":node_modules/typescript",
@@ -113,4 +113,11 @@ bin.react_app_rewired_binary(
         # So use this to prevent EOF.
         "ibazel_notify_changes",
     ],
+)
+
+java_binary(
+    name = "main",
+    main_class = "example.Main",
+    srcs = ["java/Main.java"],
+    resources = [":cra"]
 )
