@@ -1,0 +1,7 @@
+RULE hello byteman
+CLASS Main
+METHOD main
+AT ENTRY
+IF true
+DO traceln("Hello Byteman!!")
+ENDRULE
