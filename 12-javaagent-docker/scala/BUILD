@@ -6,5 +6,5 @@ scala_binary(
     main_class = "example.Main",
     srcs = glob(["*.scala"]),
     data = ["@byteman//jar", "hello.btm"],
-    jvm_flags = ["-javaagent:$(rlocation __main__/$(location @byteman//jar))=script:$(location hello.btm)"]
+    jvm_flags = ["-javaagent:$(rlocationpath @byteman//jar)=script:$(location hello.btm)"]
 )
