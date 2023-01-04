@@ -1,0 +1,8 @@
+load("//:scala_rules.bzl", "scala_library")
+
+scala_library(
+    name = "example",
+    # main_class = "example.Main",
+    srcs = ["Main.scala"],
+    format = True,
+)
