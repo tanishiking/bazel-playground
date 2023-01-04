@@ -42,7 +42,17 @@ scalatest_toolchain()
 
 load("@io_bazel_rules_scala//scala/scalafmt:scalafmt_repositories.bzl", "scalafmt_default_config", "scalafmt_repositories")
 scalafmt_default_config()
-scalafmt_repositories()
+scalafmt_repositories(
+    maven_servers = [
+        "https://repo1.maven.org/maven2",
+    ],
+    overriden_artifacts = {
+        "org_scalameta_scalafmt_core": {
+            "artifact": "org.scalameta:scalafmt-core_2.13:3.6.1",
+            "sha256": "0e32468becb1505ba5e4797f5577c29e000af2f172d2caf8eafab99708a2dc5c",
+        }
+    }
+)
 
 # rules_jvm_external
 
