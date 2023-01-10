@@ -1,0 +1,451 @@
+{
+    "dependency_tree": {
+        "conflict_resolution": {},
+        "dependencies": [
+            {
+                "coord": "com.google.protobuf:protobuf-java:3.19.2",
+                "file": "v1/https/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.19.2/protobuf-java-3.19.2.jar",
+                "dependencies": [],
+                "url": "https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.19.2/protobuf-java-3.19.2.jar",
+                "sha256": "3446cbfa13795228bc6549b91a409f27cdf6913d1c8f03e0f99572988623a04b"
+            },
+            {
+                "coord": "com.google.protobuf:protobuf-java:jar:sources:3.19.2",
+                "file": "v1/https/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.19.2/protobuf-java-3.19.2-sources.jar",
+                "dependencies": [],
+                "url": "https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.19.2/protobuf-java-3.19.2-sources.jar",
+                "sha256": "5150243063356046d85f2949f471cf533ee4b44d31052f419fa5e70a72e76baf"
+            },
+            {
+                "coord": "com.lihaoyi:fansi_2.13:0.3.1",
+                "file": "v1/https/repo1.maven.org/maven2/com/lihaoyi/fansi_2.13/0.3.1/fansi_2.13-0.3.1.jar",
+                "dependencies": [
+                    "org.scala-lang:scala-library:2.13.8",
+                    "com.lihaoyi:sourcecode_2.13:0.3.0"
+                ],
+                "url": "https://repo1.maven.org/maven2/com/lihaoyi/fansi_2.13/0.3.1/fansi_2.13-0.3.1.jar",
+                "sha256": "a722291b4509335890e347f945de846104da0a3d83ec2816267427647189c956"
+            },
+            {
+                "coord": "com.lihaoyi:fansi_2.13:jar:sources:0.3.1",
+                "file": "v1/https/repo1.maven.org/maven2/com/lihaoyi/fansi_2.13/0.3.1/fansi_2.13-0.3.1-sources.jar",
+                "dependencies": [
+                    "org.scala-lang:scala-library:jar:sources:2.13.8",
+                    "com.lihaoyi:sourcecode_2.13:jar:sources:0.3.0"
+                ],
+                "url": "https://repo1.maven.org/maven2/com/lihaoyi/fansi_2.13/0.3.1/fansi_2.13-0.3.1-sources.jar",
+                "sha256": "8af72faf3d13ac6149ab34e7be58c283dcb63c9741b26d402109ad8e794bf159"
+            },
+            {
+                "coord": "com.lihaoyi:geny_2.13:0.6.5",
+                "file": "v1/https/repo1.maven.org/maven2/com/lihaoyi/geny_2.13/0.6.5/geny_2.13-0.6.5.jar",
+                "dependencies": [],
+                "url": "https://repo1.maven.org/maven2/com/lihaoyi/geny_2.13/0.6.5/geny_2.13-0.6.5.jar",
+                "sha256": "ca3857a3f95266e0d87e1a1f26c8592c53c12ac7203f911759415f6c8a43df7d"
+            },
+            {
+                "coord": "com.lihaoyi:geny_2.13:jar:sources:0.6.5",
+                "file": "v1/https/repo1.maven.org/maven2/com/lihaoyi/geny_2.13/0.6.5/geny_2.13-0.6.5-sources.jar",
+                "dependencies": [],
+                "url": "https://repo1.maven.org/maven2/com/lihaoyi/geny_2.13/0.6.5/geny_2.13-0.6.5-sources.jar",
+                "sha256": "ece40b310bd60d33613d394796063260f07aa6d8f52675d901477a092d85b48e"
+            },
+            {
+                "coord": "com.lihaoyi:pprint_2.13:0.7.3",
+                "file": "v1/https/repo1.maven.org/maven2/com/lihaoyi/pprint_2.13/0.7.3/pprint_2.13-0.7.3.jar",
+                "dependencies": [
+                    "com.lihaoyi:fansi_2.13:0.3.1",
+                    "org.scala-lang:scala-library:2.13.8",
+                    "com.lihaoyi:sourcecode_2.13:0.3.0"
+                ],
+                "url": "https://repo1.maven.org/maven2/com/lihaoyi/pprint_2.13/0.7.3/pprint_2.13-0.7.3.jar",
+                "sha256": "2bed0f7baf81e0963993ddb5996e366e27a9da469c0bb96c97e3d966e46061d7"
+            },
+            {
+                "coord": "com.lihaoyi:pprint_2.13:jar:sources:0.7.3",
+                "file": "v1/https/repo1.maven.org/maven2/com/lihaoyi/pprint_2.13/0.7.3/pprint_2.13-0.7.3-sources.jar",
+                "dependencies": [
+                    "org.scala-lang:scala-library:jar:sources:2.13.8",
+                    "com.lihaoyi:sourcecode_2.13:jar:sources:0.3.0",
+                    "com.lihaoyi:fansi_2.13:jar:sources:0.3.1"
+                ],
+                "url": "https://repo1.maven.org/maven2/com/lihaoyi/pprint_2.13/0.7.3/pprint_2.13-0.7.3-sources.jar",
+                "sha256": "30a217bf8e1a45541842217c5e707334087631d3e35b9133c57189e076914aeb"
+            },
+            {
+                "coord": "com.lihaoyi:sourcecode_2.13:0.3.0",
+                "file": "v1/https/repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.13/0.3.0/sourcecode_2.13-0.3.0.jar",
+                "dependencies": [
+                    "org.scala-lang:scala-library:2.13.8"
+                ],
+                "url": "https://repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.13/0.3.0/sourcecode_2.13-0.3.0.jar",
+                "sha256": "6e5b2d55e942b450a222bfd3ebc23e99ca03716e42da25af1b2c8cde038100f5"
+            },
+            {
+                "coord": "com.lihaoyi:sourcecode_2.13:jar:sources:0.3.0",
+                "file": "v1/https/repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.13/0.3.0/sourcecode_2.13-0.3.0-sources.jar",
+                "dependencies": [
+                    "org.scala-lang:scala-library:jar:sources:2.13.8"
+                ],
+                "url": "https://repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.13/0.3.0/sourcecode_2.13-0.3.0-sources.jar",
+                "sha256": "cc84a3a8bff5412e444131014cc0e23428b6fb65d2a5791d339f4be808f230da"
+            },
+            {
+                "coord": "com.thesamet.scalapb:lenses_2.13:0.11.11",
+                "file": "v1/https/repo1.maven.org/maven2/com/thesamet/scalapb/lenses_2.13/0.11.11/lenses_2.13-0.11.11.jar",
+                "dependencies": [
+                    "org.scala-lang.modules:scala-collection-compat_2.13:2.7.0",
+                    "org.scala-lang:scala-library:2.13.8"
+                ],
+                "url": "https://repo1.maven.org/maven2/com/thesamet/scalapb/lenses_2.13/0.11.11/lenses_2.13-0.11.11.jar",
+                "sha256": "3da04a4ffd7b537ec90beb0d2fa456198a7c6844cc39a16be5aad3961ee59e5c"
+            },
+            {
+                "coord": "com.thesamet.scalapb:lenses_2.13:jar:sources:0.11.11",
+                "file": "v1/https/repo1.maven.org/maven2/com/thesamet/scalapb/lenses_2.13/0.11.11/lenses_2.13-0.11.11-sources.jar",
+                "dependencies": [
+                    "org.scala-lang:scala-library:jar:sources:2.13.8",
+                    "org.scala-lang.modules:scala-collection-compat_2.13:jar:sources:2.7.0"
+                ],
+                "url": "https://repo1.maven.org/maven2/com/thesamet/scalapb/lenses_2.13/0.11.11/lenses_2.13-0.11.11-sources.jar",
+                "sha256": "76f7266150b35caaef282a7c9e83a6e768df42faf071e6830a463e3d47b5c9ea"
+            },
+            {
+                "coord": "com.thesamet.scalapb:scalapb-runtime_2.13:0.11.11",
+                "file": "v1/https/repo1.maven.org/maven2/com/thesamet/scalapb/scalapb-runtime_2.13/0.11.11/scalapb-runtime_2.13-0.11.11.jar",
+                "dependencies": [
+                    "org.scala-lang.modules:scala-collection-compat_2.13:2.7.0",
+                    "org.scala-lang:scala-library:2.13.8",
+                    "com.thesamet.scalapb:lenses_2.13:0.11.11",
+                    "com.google.protobuf:protobuf-java:3.19.2"
+                ],
+                "url": "https://repo1.maven.org/maven2/com/thesamet/scalapb/scalapb-runtime_2.13/0.11.11/scalapb-runtime_2.13-0.11.11.jar",
+                "sha256": "11415623de89db09d64902a38ada91c037714d10f01e2337bb1b9afc3a4072b6"
+            },
+            {
+                "coord": "com.thesamet.scalapb:scalapb-runtime_2.13:jar:sources:0.11.11",
+                "file": "v1/https/repo1.maven.org/maven2/com/thesamet/scalapb/scalapb-runtime_2.13/0.11.11/scalapb-runtime_2.13-0.11.11-sources.jar",
+                "dependencies": [
+                    "com.thesamet.scalapb:lenses_2.13:jar:sources:0.11.11",
+                    "com.google.protobuf:protobuf-java:jar:sources:3.19.2",
+                    "org.scala-lang:scala-library:jar:sources:2.13.8",
+                    "org.scala-lang.modules:scala-collection-compat_2.13:jar:sources:2.7.0"
+                ],
+                "url": "https://repo1.maven.org/maven2/com/thesamet/scalapb/scalapb-runtime_2.13/0.11.11/scalapb-runtime_2.13-0.11.11-sources.jar",
+                "sha256": "7a90c9e2b38c7b4a3578b0c7f5e82e8ec4370722143651a4f840eb7b2559d939"
+            },
+            {
+                "coord": "com.typesafe:config:1.4.2",
+                "file": "v1/https/repo1.maven.org/maven2/com/typesafe/config/1.4.2/config-1.4.2.jar",
+                "dependencies": [],
+                "url": "https://repo1.maven.org/maven2/com/typesafe/config/1.4.2/config-1.4.2.jar",
+                "sha256": "0076c249b4387d8369146528fd5dacb3efba098dc02ecf9ac81debdfc2e12fd5"
+            },
+            {
+                "coord": "com.typesafe:config:jar:sources:1.4.2",
+                "file": "v1/https/repo1.maven.org/maven2/com/typesafe/config/1.4.2/config-1.4.2-sources.jar",
+                "dependencies": [],
+                "url": "https://repo1.maven.org/maven2/com/typesafe/config/1.4.2/config-1.4.2-sources.jar",
+                "sha256": "2f1139b6985e24abe09fd05f7b3448dbbcda54854bd490c783cd02fdb82f342f"
+            },
+            {
+                "coord": "net.java.dev.jna:jna:5.9.0",
+                "file": "v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.9.0/jna-5.9.0.jar",
+                "dependencies": [],
+                "url": "https://repo1.maven.org/maven2/net/java/dev/jna/jna/5.9.0/jna-5.9.0.jar",
+                "sha256": "eafcc780b445434d3c5ae7fa2fb6665de1a7560d537d2c408a8e80cd14d27161"
+            },
+            {
+                "coord": "net.java.dev.jna:jna:jar:sources:5.9.0",
+                "file": "v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.9.0/jna-5.9.0-sources.jar",
+                "dependencies": [],
+                "url": "https://repo1.maven.org/maven2/net/java/dev/jna/jna/5.9.0/jna-5.9.0-sources.jar",
+                "sha256": "577ee7ca6f762e38c068ab2989b1e9fc687063b39432d9d4417a17c7f2210ba7"
+            },
+            {
+                "coord": "org.jline:jline:3.21.0",
+                "file": "v1/https/repo1.maven.org/maven2/org/jline/jline/3.21.0/jline-3.21.0.jar",
+                "dependencies": [],
+                "url": "https://repo1.maven.org/maven2/org/jline/jline/3.21.0/jline-3.21.0.jar",
+                "sha256": "1e7d63a2bd1c26354ca1987e55469ea4327c4a3845c10d7a7790ca9729c49c02"
+            },
+            {
+                "coord": "org.jline:jline:jar:sources:3.21.0",
+                "file": "v1/https/repo1.maven.org/maven2/org/jline/jline/3.21.0/jline-3.21.0-sources.jar",
+                "dependencies": [],
+                "url": "https://repo1.maven.org/maven2/org/jline/jline/3.21.0/jline-3.21.0-sources.jar",
+                "sha256": "9d1f5958a0cff8f0b1729cd10b3bbe71d2587a0ec9537ece87cca45d21ba3db3"
+            },
+            {
+                "coord": "org.scala-lang.modules:scala-collection-compat_2.13:2.7.0",
+                "file": "v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.13/2.7.0/scala-collection-compat_2.13-2.7.0.jar",
+                "dependencies": [
+                    "org.scala-lang:scala-library:2.13.8"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.13/2.7.0/scala-collection-compat_2.13-2.7.0.jar",
+                "sha256": "936510670822c634f34ef793ef937a75e220f28824e591b220867c2f14943ad6"
+            },
+            {
+                "coord": "org.scala-lang.modules:scala-collection-compat_2.13:jar:sources:2.7.0",
+                "file": "v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.13/2.7.0/scala-collection-compat_2.13-2.7.0-sources.jar",
+                "dependencies": [
+                    "org.scala-lang:scala-library:jar:sources:2.13.8"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.13/2.7.0/scala-collection-compat_2.13-2.7.0-sources.jar",
+                "sha256": "e40e976633cc2862ceb5bb95d4baa06fa0ed2ed0b4809ef5b207268f93df21a0"
+            },
+            {
+                "coord": "org.scala-lang:scala-compiler:2.13.8",
+                "file": "v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.8/scala-compiler-2.13.8.jar",
+                "dependencies": [
+                    "net.java.dev.jna:jna:5.9.0",
+                    "org.scala-lang:scala-library:2.13.8",
+                    "org.scala-lang:scala-reflect:2.13.8",
+                    "org.jline:jline:3.21.0"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.8/scala-compiler-2.13.8.jar",
+                "sha256": "b248cb6f390ee8bceb912af3da471146fdf003702a173d750f986b1d4a3362e6"
+            },
+            {
+                "coord": "org.scala-lang:scala-compiler:jar:sources:2.13.8",
+                "file": "v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.8/scala-compiler-2.13.8-sources.jar",
+                "dependencies": [
+                    "net.java.dev.jna:jna:jar:sources:5.9.0",
+                    "org.scala-lang:scala-library:jar:sources:2.13.8",
+                    "org.scala-lang:scala-reflect:jar:sources:2.13.8",
+                    "org.jline:jline:jar:sources:3.21.0"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.8/scala-compiler-2.13.8-sources.jar",
+                "sha256": "8d34c24b4e620beb0ce4d96ca59c45107b73567a546ac5b758ce28e891526308"
+            },
+            {
+                "coord": "org.scala-lang:scala-library:2.13.8",
+                "file": "v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.8/scala-library-2.13.8.jar",
+                "dependencies": [],
+                "url": "https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.8/scala-library-2.13.8.jar",
+                "sha256": "a0882b82514190c2bac7d1a459872a75f005fc0f3e88b2bc0390367146e35db7"
+            },
+            {
+                "coord": "org.scala-lang:scala-library:jar:sources:2.13.8",
+                "file": "v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.8/scala-library-2.13.8-sources.jar",
+                "dependencies": [],
+                "url": "https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.8/scala-library-2.13.8-sources.jar",
+                "sha256": "fcfbdb5fa409a10c0b0af775382d19cd648663e325a6cd5212f0fed00af31824"
+            },
+            {
+                "coord": "org.scala-lang:scala-reflect:2.13.8",
+                "file": "v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.8/scala-reflect-2.13.8.jar",
+                "dependencies": [
+                    "org.scala-lang:scala-library:2.13.8"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.8/scala-reflect-2.13.8.jar",
+                "sha256": "fdfbcc92e87f424578b303bcb47e0f55fee990c4b6da0006c9e75879d1e442e4"
+            },
+            {
+                "coord": "org.scala-lang:scala-reflect:jar:sources:2.13.8",
+                "file": "v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.8/scala-reflect-2.13.8-sources.jar",
+                "dependencies": [
+                    "org.scala-lang:scala-library:jar:sources:2.13.8"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.8/scala-reflect-2.13.8-sources.jar",
+                "sha256": "e5c7fb7de045c8b390b89e0a1f74d522b54dcd2268bb4cbe6e18fe75ffca90f2"
+            },
+            {
+                "coord": "org.scala-lang:scalap:2.13.8",
+                "file": "v1/https/repo1.maven.org/maven2/org/scala-lang/scalap/2.13.8/scalap-2.13.8.jar",
+                "dependencies": [
+                    "org.jline:jline:3.21.0",
+                    "net.java.dev.jna:jna:5.9.0",
+                    "org.scala-lang:scala-compiler:2.13.8",
+                    "org.scala-lang:scala-reflect:2.13.8",
+                    "org.scala-lang:scala-library:2.13.8"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scala-lang/scalap/2.13.8/scalap-2.13.8.jar",
+                "sha256": "f61f28ea51516e6b66e90e46142acea5d040c87242af933c63c2ce3729da19ac"
+            },
+            {
+                "coord": "org.scala-lang:scalap:jar:sources:2.13.8",
+                "file": "v1/https/repo1.maven.org/maven2/org/scala-lang/scalap/2.13.8/scalap-2.13.8-sources.jar",
+                "dependencies": [
+                    "org.scala-lang:scala-reflect:jar:sources:2.13.8",
+                    "org.jline:jline:jar:sources:3.21.0",
+                    "net.java.dev.jna:jna:jar:sources:5.9.0",
+                    "org.scala-lang:scala-library:jar:sources:2.13.8",
+                    "org.scala-lang:scala-compiler:jar:sources:2.13.8"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scala-lang/scalap/2.13.8/scalap-2.13.8-sources.jar",
+                "sha256": "2e41ea75538dd07436b84d8d615b7db22099eea4d45368c32307aeb5adee5727"
+            },
+            {
+                "coord": "org.scalameta:common_2.13:4.5.13",
+                "file": "v1/https/repo1.maven.org/maven2/org/scalameta/common_2.13/4.5.13/common_2.13-4.5.13.jar",
+                "dependencies": [
+                    "org.scala-lang.modules:scala-collection-compat_2.13:2.7.0",
+                    "com.thesamet.scalapb:lenses_2.13:0.11.11",
+                    "org.scala-lang:scala-library:2.13.8",
+                    "com.lihaoyi:sourcecode_2.13:0.3.0",
+                    "com.google.protobuf:protobuf-java:3.19.2",
+                    "com.thesamet.scalapb:scalapb-runtime_2.13:0.11.11"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scalameta/common_2.13/4.5.13/common_2.13-4.5.13.jar",
+                "sha256": "65403ca1615512dcd74231edf88c472c55b5d87bee87f3ed14a935289637d313"
+            },
+            {
+                "coord": "org.scalameta:common_2.13:jar:sources:4.5.13",
+                "file": "v1/https/repo1.maven.org/maven2/org/scalameta/common_2.13/4.5.13/common_2.13-4.5.13-sources.jar",
+                "dependencies": [
+                    "com.thesamet.scalapb:scalapb-runtime_2.13:jar:sources:0.11.11",
+                    "com.lihaoyi:sourcecode_2.13:jar:sources:0.3.0",
+                    "org.scala-lang.modules:scala-collection-compat_2.13:jar:sources:2.7.0",
+                    "com.thesamet.scalapb:lenses_2.13:jar:sources:0.11.11",
+                    "com.google.protobuf:protobuf-java:jar:sources:3.19.2",
+                    "org.scala-lang:scala-library:jar:sources:2.13.8"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scalameta/common_2.13/4.5.13/common_2.13-4.5.13-sources.jar",
+                "sha256": "2b1a4796566a9f67c5f97a53864489d6bbc8cf53fb7680c9372ca14e72d8b169"
+            },
+            {
+                "coord": "org.scalameta:fastparse-v2_2.13:2.3.1",
+                "file": "v1/https/repo1.maven.org/maven2/org/scalameta/fastparse-v2_2.13/2.3.1/fastparse-v2_2.13-2.3.1.jar",
+                "dependencies": [
+                    "org.scala-lang:scala-library:2.13.8",
+                    "com.lihaoyi:geny_2.13:0.6.5",
+                    "com.lihaoyi:sourcecode_2.13:0.3.0"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scalameta/fastparse-v2_2.13/2.3.1/fastparse-v2_2.13-2.3.1.jar",
+                "sha256": "8fca8597ad6d7c13c48009ee13bbe80c176b08ab12e68af54a50f7f69d8447c5"
+            },
+            {
+                "coord": "org.scalameta:fastparse-v2_2.13:jar:sources:2.3.1",
+                "file": "v1/https/repo1.maven.org/maven2/org/scalameta/fastparse-v2_2.13/2.3.1/fastparse-v2_2.13-2.3.1-sources.jar",
+                "dependencies": [
+                    "com.lihaoyi:geny_2.13:jar:sources:0.6.5",
+                    "org.scala-lang:scala-library:jar:sources:2.13.8",
+                    "com.lihaoyi:sourcecode_2.13:jar:sources:0.3.0"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scalameta/fastparse-v2_2.13/2.3.1/fastparse-v2_2.13-2.3.1-sources.jar",
+                "sha256": "8b15f0ab21de220ced6ef14d1854f1446123371ef9d4020e1d4be941c3e488b2"
+            },
+            {
+                "coord": "org.scalameta:parsers_2.13:4.5.13",
+                "file": "v1/https/repo1.maven.org/maven2/org/scalameta/parsers_2.13/4.5.13/parsers_2.13-4.5.13.jar",
+                "dependencies": [
+                    "org.scala-lang.modules:scala-collection-compat_2.13:2.7.0",
+                    "org.scalameta:trees_2.13:4.5.13",
+                    "org.scalameta:common_2.13:4.5.13",
+                    "com.thesamet.scalapb:lenses_2.13:0.11.11",
+                    "org.scalameta:fastparse-v2_2.13:2.3.1",
+                    "org.scala-lang:scala-library:2.13.8",
+                    "com.lihaoyi:sourcecode_2.13:0.3.0",
+                    "com.google.protobuf:protobuf-java:3.19.2",
+                    "com.lihaoyi:geny_2.13:0.6.5",
+                    "com.thesamet.scalapb:scalapb-runtime_2.13:0.11.11"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scalameta/parsers_2.13/4.5.13/parsers_2.13-4.5.13.jar",
+                "sha256": "473ab3d64c575dfbf41e803876ce765b58a7066ec67b053c0190591374f7b7ba"
+            },
+            {
+                "coord": "org.scalameta:parsers_2.13:jar:sources:4.5.13",
+                "file": "v1/https/repo1.maven.org/maven2/org/scalameta/parsers_2.13/4.5.13/parsers_2.13-4.5.13-sources.jar",
+                "dependencies": [
+                    "com.thesamet.scalapb:scalapb-runtime_2.13:jar:sources:0.11.11",
+                    "com.lihaoyi:sourcecode_2.13:jar:sources:0.3.0",
+                    "org.scalameta:fastparse-v2_2.13:jar:sources:2.3.1",
+                    "com.lihaoyi:geny_2.13:jar:sources:0.6.5",
+                    "org.scala-lang.modules:scala-collection-compat_2.13:jar:sources:2.7.0",
+                    "com.thesamet.scalapb:lenses_2.13:jar:sources:0.11.11",
+                    "com.google.protobuf:protobuf-java:jar:sources:3.19.2",
+                    "org.scalameta:trees_2.13:jar:sources:4.5.13",
+                    "org.scala-lang:scala-library:jar:sources:2.13.8",
+                    "org.scalameta:common_2.13:jar:sources:4.5.13"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scalameta/parsers_2.13/4.5.13/parsers_2.13-4.5.13-sources.jar",
+                "sha256": "bfa3b5ffbbbf026e820ecb930d3f8efb092439aa7415a6575c38b0717bb440e2"
+            },
+            {
+                "coord": "org.scalameta:scalameta_2.13:4.5.13",
+                "file": "v1/https/repo1.maven.org/maven2/org/scalameta/scalameta_2.13/4.5.13/scalameta_2.13-4.5.13.jar",
+                "dependencies": [
+                    "org.scala-lang.modules:scala-collection-compat_2.13:2.7.0",
+                    "org.scalameta:trees_2.13:4.5.13",
+                    "org.scalameta:common_2.13:4.5.13",
+                    "org.jline:jline:3.21.0",
+                    "com.thesamet.scalapb:lenses_2.13:0.11.11",
+                    "org.scalameta:parsers_2.13:4.5.13",
+                    "net.java.dev.jna:jna:5.9.0",
+                    "org.scalameta:fastparse-v2_2.13:2.3.1",
+                    "org.scala-lang:scala-compiler:2.13.8",
+                    "org.scala-lang:scala-reflect:2.13.8",
+                    "org.scala-lang:scala-library:2.13.8",
+                    "org.scala-lang:scalap:2.13.8",
+                    "com.lihaoyi:sourcecode_2.13:0.3.0",
+                    "com.google.protobuf:protobuf-java:3.19.2",
+                    "com.lihaoyi:geny_2.13:0.6.5",
+                    "com.thesamet.scalapb:scalapb-runtime_2.13:0.11.11"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scalameta/scalameta_2.13/4.5.13/scalameta_2.13-4.5.13.jar",
+                "sha256": "824ed033999f59f1c91ff87c29101b5b1355e78cc8eb8c190cc09bcd24b05220"
+            },
+            {
+                "coord": "org.scalameta:scalameta_2.13:jar:sources:4.5.13",
+                "file": "v1/https/repo1.maven.org/maven2/org/scalameta/scalameta_2.13/4.5.13/scalameta_2.13-4.5.13-sources.jar",
+                "dependencies": [
+                    "org.scala-lang:scalap:jar:sources:2.13.8",
+                    "org.scala-lang:scala-reflect:jar:sources:2.13.8",
+                    "org.jline:jline:jar:sources:3.21.0",
+                    "com.thesamet.scalapb:scalapb-runtime_2.13:jar:sources:0.11.11",
+                    "com.lihaoyi:sourcecode_2.13:jar:sources:0.3.0",
+                    "org.scalameta:fastparse-v2_2.13:jar:sources:2.3.1",
+                    "com.lihaoyi:geny_2.13:jar:sources:0.6.5",
+                    "org.scala-lang.modules:scala-collection-compat_2.13:jar:sources:2.7.0",
+                    "com.thesamet.scalapb:lenses_2.13:jar:sources:0.11.11",
+                    "net.java.dev.jna:jna:jar:sources:5.9.0",
+                    "com.google.protobuf:protobuf-java:jar:sources:3.19.2",
+                    "org.scalameta:parsers_2.13:jar:sources:4.5.13",
+                    "org.scalameta:trees_2.13:jar:sources:4.5.13",
+                    "org.scala-lang:scala-library:jar:sources:2.13.8",
+                    "org.scalameta:common_2.13:jar:sources:4.5.13",
+                    "org.scala-lang:scala-compiler:jar:sources:2.13.8"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scalameta/scalameta_2.13/4.5.13/scalameta_2.13-4.5.13-sources.jar",
+                "sha256": "ca0c20cd68897d129e0a84571bd5b0eaee62f0071e5d2c65dd6291d2c5c674f1"
+            },
+            {
+                "coord": "org.scalameta:trees_2.13:4.5.13",
+                "file": "v1/https/repo1.maven.org/maven2/org/scalameta/trees_2.13/4.5.13/trees_2.13-4.5.13.jar",
+                "dependencies": [
+                    "org.scala-lang.modules:scala-collection-compat_2.13:2.7.0",
+                    "org.scalameta:common_2.13:4.5.13",
+                    "com.thesamet.scalapb:lenses_2.13:0.11.11",
+                    "org.scalameta:fastparse-v2_2.13:2.3.1",
+                    "org.scala-lang:scala-library:2.13.8",
+                    "com.lihaoyi:sourcecode_2.13:0.3.0",
+                    "com.google.protobuf:protobuf-java:3.19.2",
+                    "com.lihaoyi:geny_2.13:0.6.5",
+                    "com.thesamet.scalapb:scalapb-runtime_2.13:0.11.11"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scalameta/trees_2.13/4.5.13/trees_2.13-4.5.13.jar",
+                "sha256": "57af1bfb3162348e33b824ce9297ce6ff46c465917ea251026d86f6a4679c23c"
+            },
+            {
+                "coord": "org.scalameta:trees_2.13:jar:sources:4.5.13",
+                "file": "v1/https/repo1.maven.org/maven2/org/scalameta/trees_2.13/4.5.13/trees_2.13-4.5.13-sources.jar",
+                "dependencies": [
+                    "com.thesamet.scalapb:scalapb-runtime_2.13:jar:sources:0.11.11",
+                    "com.lihaoyi:sourcecode_2.13:jar:sources:0.3.0",
+                    "org.scalameta:fastparse-v2_2.13:jar:sources:2.3.1",
+                    "com.lihaoyi:geny_2.13:jar:sources:0.6.5",
+                    "org.scala-lang.modules:scala-collection-compat_2.13:jar:sources:2.7.0",
+                    "com.thesamet.scalapb:lenses_2.13:jar:sources:0.11.11",
+                    "com.google.protobuf:protobuf-java:jar:sources:3.19.2",
+                    "org.scala-lang:scala-library:jar:sources:2.13.8",
+                    "org.scalameta:common_2.13:jar:sources:4.5.13"
+                ],
+                "url": "https://repo1.maven.org/maven2/org/scalameta/trees_2.13/4.5.13/trees_2.13-4.5.13-sources.jar",
+                "sha256": "c12ef35f9ddd6e5d1e139b90b96c186e0f5c39f5e0ba4f4563bfde9394280729"
+            }
+        ],
+        "version": "0.1.0",
+        "__AUTOGENERATED_FILE_DO_NOT_MODIFY_THIS_FILE_MANUALLY": -449444979
+    }
+}

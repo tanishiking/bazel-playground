@@ -1,0 +1,549 @@
+{
+  "schemaVersion" : "1.2.0",
+  "pkgManager" : {
+    "name" : "maven",
+    "repositories" : [
+    ]
+  },
+  "pkgs" : [
+    {
+      "id" : "com.google.protobuf:protobuf-java@3.19.2",
+      "info" : {
+        "name" : "com.google.protobuf:protobuf-java",
+        "version" : "3.19.2"
+      }
+    },
+    {
+      "id" : "com.lihaoyi:fansi_2.13@0.3.1",
+      "info" : {
+        "name" : "com.lihaoyi:fansi_2.13",
+        "version" : "0.3.1"
+      }
+    },
+    {
+      "id" : "com.lihaoyi:geny_2.13@0.6.5",
+      "info" : {
+        "name" : "com.lihaoyi:geny_2.13",
+        "version" : "0.6.5"
+      }
+    },
+    {
+      "id" : "com.lihaoyi:pprint_2.13@0.7.3",
+      "info" : {
+        "name" : "com.lihaoyi:pprint_2.13",
+        "version" : "0.7.3"
+      }
+    },
+    {
+      "id" : "com.lihaoyi:sourcecode_2.13@0.3.0",
+      "info" : {
+        "name" : "com.lihaoyi:sourcecode_2.13",
+        "version" : "0.3.0"
+      }
+    },
+    {
+      "id" : "com.thesamet.scalapb:lenses_2.13@0.11.11",
+      "info" : {
+        "name" : "com.thesamet.scalapb:lenses_2.13",
+        "version" : "0.11.11"
+      }
+    },
+    {
+      "id" : "com.thesamet.scalapb:scalapb-runtime_2.13@0.11.11",
+      "info" : {
+        "name" : "com.thesamet.scalapb:scalapb-runtime_2.13",
+        "version" : "0.11.11"
+      }
+    },
+    {
+      "id" : "com.typesafe:config@1.4.2",
+      "info" : {
+        "name" : "com.typesafe:config",
+        "version" : "1.4.2"
+      }
+    },
+    {
+      "id" : "net.java.dev.jna:jna@5.9.0",
+      "info" : {
+        "name" : "net.java.dev.jna:jna",
+        "version" : "5.9.0"
+      }
+    },
+    {
+      "id" : "org.jline:jline@3.21.0",
+      "info" : {
+        "name" : "org.jline:jline",
+        "version" : "3.21.0"
+      }
+    },
+    {
+      "id" : "org.scala-lang.modules:scala-collection-compat_2.13@2.7.0",
+      "info" : {
+        "name" : "org.scala-lang.modules:scala-collection-compat_2.13",
+        "version" : "2.7.0"
+      }
+    },
+    {
+      "id" : "org.scala-lang:scala-compiler@2.13.8",
+      "info" : {
+        "name" : "org.scala-lang:scala-compiler",
+        "version" : "2.13.8"
+      }
+    },
+    {
+      "id" : "org.scala-lang:scala-library@2.13.8",
+      "info" : {
+        "name" : "org.scala-lang:scala-library",
+        "version" : "2.13.8"
+      }
+    },
+    {
+      "id" : "org.scala-lang:scala-reflect@2.13.8",
+      "info" : {
+        "name" : "org.scala-lang:scala-reflect",
+        "version" : "2.13.8"
+      }
+    },
+    {
+      "id" : "org.scala-lang:scalap@2.13.8",
+      "info" : {
+        "name" : "org.scala-lang:scalap",
+        "version" : "2.13.8"
+      }
+    },
+    {
+      "id" : "org.scalameta:common_2.13@4.5.13",
+      "info" : {
+        "name" : "org.scalameta:common_2.13",
+        "version" : "4.5.13"
+      }
+    },
+    {
+      "id" : "org.scalameta:fastparse-v2_2.13@2.3.1",
+      "info" : {
+        "name" : "org.scalameta:fastparse-v2_2.13",
+        "version" : "2.3.1"
+      }
+    },
+    {
+      "id" : "org.scalameta:parsers_2.13@4.5.13",
+      "info" : {
+        "name" : "org.scalameta:parsers_2.13",
+        "version" : "4.5.13"
+      }
+    },
+    {
+      "id" : "org.scalameta:scalameta_2.13@4.5.13",
+      "info" : {
+        "name" : "org.scalameta:scalameta_2.13",
+        "version" : "4.5.13"
+      }
+    },
+    {
+      "id" : "org.scalameta:trees_2.13@4.5.13",
+      "info" : {
+        "name" : "org.scalameta:trees_2.13",
+        "version" : "4.5.13"
+      }
+    },
+    {
+      "id" : "app@1.0.0",
+      "info" : {
+        "name" : "app",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "graph" : {
+    "rootNodeId" : "root-node",
+    "nodes" : [
+      {
+        "nodeId" : "com.google.protobuf:protobuf-java@3.19.2",
+        "pkgId" : "com.google.protobuf:protobuf-java@3.19.2",
+        "deps" : [
+        ]
+      },
+      {
+        "nodeId" : "com.lihaoyi:fansi_2.13@0.3.1",
+        "pkgId" : "com.lihaoyi:fansi_2.13@0.3.1",
+        "deps" : [
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          },
+          {
+            "nodeId" : "com.lihaoyi:sourcecode_2.13@0.3.0"
+          }
+        ]
+      },
+      {
+        "nodeId" : "com.lihaoyi:geny_2.13@0.6.5",
+        "pkgId" : "com.lihaoyi:geny_2.13@0.6.5",
+        "deps" : [
+        ]
+      },
+      {
+        "nodeId" : "com.lihaoyi:pprint_2.13@0.7.3",
+        "pkgId" : "com.lihaoyi:pprint_2.13@0.7.3",
+        "deps" : [
+          {
+            "nodeId" : "com.lihaoyi:fansi_2.13@0.3.1"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          },
+          {
+            "nodeId" : "com.lihaoyi:sourcecode_2.13@0.3.0"
+          }
+        ]
+      },
+      {
+        "nodeId" : "com.lihaoyi:sourcecode_2.13@0.3.0",
+        "pkgId" : "com.lihaoyi:sourcecode_2.13@0.3.0",
+        "deps" : [
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          }
+        ]
+      },
+      {
+        "nodeId" : "com.thesamet.scalapb:lenses_2.13@0.11.11",
+        "pkgId" : "com.thesamet.scalapb:lenses_2.13@0.11.11",
+        "deps" : [
+          {
+            "nodeId" : "org.scala-lang.modules:scala-collection-compat_2.13@2.7.0"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          }
+        ]
+      },
+      {
+        "nodeId" : "com.thesamet.scalapb:scalapb-runtime_2.13@0.11.11",
+        "pkgId" : "com.thesamet.scalapb:scalapb-runtime_2.13@0.11.11",
+        "deps" : [
+          {
+            "nodeId" : "org.scala-lang.modules:scala-collection-compat_2.13@2.7.0"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          },
+          {
+            "nodeId" : "com.thesamet.scalapb:lenses_2.13@0.11.11"
+          },
+          {
+            "nodeId" : "com.google.protobuf:protobuf-java@3.19.2"
+          }
+        ]
+      },
+      {
+        "nodeId" : "com.typesafe:config@1.4.2",
+        "pkgId" : "com.typesafe:config@1.4.2",
+        "deps" : [
+        ]
+      },
+      {
+        "nodeId" : "net.java.dev.jna:jna@5.9.0",
+        "pkgId" : "net.java.dev.jna:jna@5.9.0",
+        "deps" : [
+        ]
+      },
+      {
+        "nodeId" : "org.jline:jline@3.21.0",
+        "pkgId" : "org.jline:jline@3.21.0",
+        "deps" : [
+        ]
+      },
+      {
+        "nodeId" : "org.scala-lang.modules:scala-collection-compat_2.13@2.7.0",
+        "pkgId" : "org.scala-lang.modules:scala-collection-compat_2.13@2.7.0",
+        "deps" : [
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          }
+        ]
+      },
+      {
+        "nodeId" : "org.scala-lang:scala-compiler@2.13.8",
+        "pkgId" : "org.scala-lang:scala-compiler@2.13.8",
+        "deps" : [
+          {
+            "nodeId" : "net.java.dev.jna:jna@5.9.0"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-reflect@2.13.8"
+          },
+          {
+            "nodeId" : "org.jline:jline@3.21.0"
+          }
+        ]
+      },
+      {
+        "nodeId" : "org.scala-lang:scala-library@2.13.8",
+        "pkgId" : "org.scala-lang:scala-library@2.13.8",
+        "deps" : [
+        ]
+      },
+      {
+        "nodeId" : "org.scala-lang:scala-reflect@2.13.8",
+        "pkgId" : "org.scala-lang:scala-reflect@2.13.8",
+        "deps" : [
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          }
+        ]
+      },
+      {
+        "nodeId" : "org.scala-lang:scalap@2.13.8",
+        "pkgId" : "org.scala-lang:scalap@2.13.8",
+        "deps" : [
+          {
+            "nodeId" : "org.jline:jline@3.21.0"
+          },
+          {
+            "nodeId" : "net.java.dev.jna:jna@5.9.0"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-compiler@2.13.8"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-reflect@2.13.8"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          }
+        ]
+      },
+      {
+        "nodeId" : "org.scalameta:common_2.13@4.5.13",
+        "pkgId" : "org.scalameta:common_2.13@4.5.13",
+        "deps" : [
+          {
+            "nodeId" : "org.scala-lang.modules:scala-collection-compat_2.13@2.7.0"
+          },
+          {
+            "nodeId" : "com.thesamet.scalapb:lenses_2.13@0.11.11"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          },
+          {
+            "nodeId" : "com.lihaoyi:sourcecode_2.13@0.3.0"
+          },
+          {
+            "nodeId" : "com.google.protobuf:protobuf-java@3.19.2"
+          },
+          {
+            "nodeId" : "com.thesamet.scalapb:scalapb-runtime_2.13@0.11.11"
+          }
+        ]
+      },
+      {
+        "nodeId" : "org.scalameta:fastparse-v2_2.13@2.3.1",
+        "pkgId" : "org.scalameta:fastparse-v2_2.13@2.3.1",
+        "deps" : [
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          },
+          {
+            "nodeId" : "com.lihaoyi:geny_2.13@0.6.5"
+          },
+          {
+            "nodeId" : "com.lihaoyi:sourcecode_2.13@0.3.0"
+          }
+        ]
+      },
+      {
+        "nodeId" : "org.scalameta:parsers_2.13@4.5.13",
+        "pkgId" : "org.scalameta:parsers_2.13@4.5.13",
+        "deps" : [
+          {
+            "nodeId" : "org.scala-lang.modules:scala-collection-compat_2.13@2.7.0"
+          },
+          {
+            "nodeId" : "org.scalameta:trees_2.13@4.5.13"
+          },
+          {
+            "nodeId" : "org.scalameta:common_2.13@4.5.13"
+          },
+          {
+            "nodeId" : "com.thesamet.scalapb:lenses_2.13@0.11.11"
+          },
+          {
+            "nodeId" : "org.scalameta:fastparse-v2_2.13@2.3.1"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          },
+          {
+            "nodeId" : "com.lihaoyi:sourcecode_2.13@0.3.0"
+          },
+          {
+            "nodeId" : "com.google.protobuf:protobuf-java@3.19.2"
+          },
+          {
+            "nodeId" : "com.lihaoyi:geny_2.13@0.6.5"
+          },
+          {
+            "nodeId" : "com.thesamet.scalapb:scalapb-runtime_2.13@0.11.11"
+          }
+        ]
+      },
+      {
+        "nodeId" : "org.scalameta:scalameta_2.13@4.5.13",
+        "pkgId" : "org.scalameta:scalameta_2.13@4.5.13",
+        "deps" : [
+          {
+            "nodeId" : "org.scala-lang.modules:scala-collection-compat_2.13@2.7.0"
+          },
+          {
+            "nodeId" : "org.scalameta:trees_2.13@4.5.13"
+          },
+          {
+            "nodeId" : "org.scalameta:common_2.13@4.5.13"
+          },
+          {
+            "nodeId" : "org.jline:jline@3.21.0"
+          },
+          {
+            "nodeId" : "com.thesamet.scalapb:lenses_2.13@0.11.11"
+          },
+          {
+            "nodeId" : "org.scalameta:parsers_2.13@4.5.13"
+          },
+          {
+            "nodeId" : "net.java.dev.jna:jna@5.9.0"
+          },
+          {
+            "nodeId" : "org.scalameta:fastparse-v2_2.13@2.3.1"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-compiler@2.13.8"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-reflect@2.13.8"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          },
+          {
+            "nodeId" : "org.scala-lang:scalap@2.13.8"
+          },
+          {
+            "nodeId" : "com.lihaoyi:sourcecode_2.13@0.3.0"
+          },
+          {
+            "nodeId" : "com.google.protobuf:protobuf-java@3.19.2"
+          },
+          {
+            "nodeId" : "com.lihaoyi:geny_2.13@0.6.5"
+          },
+          {
+            "nodeId" : "com.thesamet.scalapb:scalapb-runtime_2.13@0.11.11"
+          }
+        ]
+      },
+      {
+        "nodeId" : "org.scalameta:trees_2.13@4.5.13",
+        "pkgId" : "org.scalameta:trees_2.13@4.5.13",
+        "deps" : [
+          {
+            "nodeId" : "org.scala-lang.modules:scala-collection-compat_2.13@2.7.0"
+          },
+          {
+            "nodeId" : "org.scalameta:common_2.13@4.5.13"
+          },
+          {
+            "nodeId" : "com.thesamet.scalapb:lenses_2.13@0.11.11"
+          },
+          {
+            "nodeId" : "org.scalameta:fastparse-v2_2.13@2.3.1"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          },
+          {
+            "nodeId" : "com.lihaoyi:sourcecode_2.13@0.3.0"
+          },
+          {
+            "nodeId" : "com.google.protobuf:protobuf-java@3.19.2"
+          },
+          {
+            "nodeId" : "com.lihaoyi:geny_2.13@0.6.5"
+          },
+          {
+            "nodeId" : "com.thesamet.scalapb:scalapb-runtime_2.13@0.11.11"
+          }
+        ]
+      },
+      {
+        "nodeId" : "root-node",
+        "pkgId" : "app@1.0.0",
+        "deps" : [
+          {
+            "nodeId" : "com.google.protobuf:protobuf-java@3.19.2"
+          },
+          {
+            "nodeId" : "com.lihaoyi:fansi_2.13@0.3.1"
+          },
+          {
+            "nodeId" : "com.lihaoyi:geny_2.13@0.6.5"
+          },
+          {
+            "nodeId" : "com.lihaoyi:pprint_2.13@0.7.3"
+          },
+          {
+            "nodeId" : "com.lihaoyi:sourcecode_2.13@0.3.0"
+          },
+          {
+            "nodeId" : "com.thesamet.scalapb:lenses_2.13@0.11.11"
+          },
+          {
+            "nodeId" : "com.thesamet.scalapb:scalapb-runtime_2.13@0.11.11"
+          },
+          {
+            "nodeId" : "com.typesafe:config@1.4.2"
+          },
+          {
+            "nodeId" : "net.java.dev.jna:jna@5.9.0"
+          },
+          {
+            "nodeId" : "org.jline:jline@3.21.0"
+          },
+          {
+            "nodeId" : "org.scala-lang.modules:scala-collection-compat_2.13@2.7.0"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-compiler@2.13.8"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-library@2.13.8"
+          },
+          {
+            "nodeId" : "org.scala-lang:scala-reflect@2.13.8"
+          },
+          {
+            "nodeId" : "org.scala-lang:scalap@2.13.8"
+          },
+          {
+            "nodeId" : "org.scalameta:common_2.13@4.5.13"
+          },
+          {
+            "nodeId" : "org.scalameta:fastparse-v2_2.13@2.3.1"
+          },
+          {
+            "nodeId" : "org.scalameta:parsers_2.13@4.5.13"
+          },
+          {
+            "nodeId" : "org.scalameta:scalameta_2.13@4.5.13"
+          },
+          {
+            "nodeId" : "org.scalameta:trees_2.13@4.5.13"
+          }
+        ]
+      }
+    ]
+  }
+}
