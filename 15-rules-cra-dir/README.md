@@ -1,4 +1,15 @@
 
+```
+ERROR: /Users/tanishiking/src/github.com/tanishiking/bazel-playground/15-rules-cra-dir/app/BUILD.bazel:3:22: no such package 'app/public/lodash-4.17.21.tgz': BUILD file not found in any of the following directories. Add a BUILD file to a directory to mark it as a package.
+ - /Users/tanishiking/src/github.com/tanishiking/bazel-playground/15-rules-cra-dir/app/public/lodash-4.17.21.tgz and referenced by '//app:.aspect_rules_js/node_modules/lodash@0.0.0'
+ERROR: Analysis of target '//app:cra' failed; build aborted:
+
+```
+
+---
+
+
+chdir fixes the following error!
 
 ```
 $ bazel build //app:cra

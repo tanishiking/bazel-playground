@@ -24,11 +24,14 @@ load("@aspect_rules_js//npm:npm_import.bzl", "npm_translate_lock")
 
 npm_translate_lock(
     name = "npm",
-    npm_package_lock = "//app:package-lock.json",
+    # npm_package_lock = "//app:package-lock.json",
     npmrc = "//:.npmrc",
-    package_json = "//app:package.json",
     pnpm_lock = "//app:pnpm-lock.yaml",
     verify_node_modules_ignored = "//:.bazelignore",
+    data = [
+        "//app:package.json",
+        "//app/public:lodash-4.17.21.tgz"
+    ],
     public_hoist_packages = {
         "jest-watch-typeahead": [""],
         "eslint": [""],
