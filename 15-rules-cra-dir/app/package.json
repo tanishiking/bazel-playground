@@ -42,5 +42,16 @@
   },
   "devDependencies": {
     "react-app-rewired": "^2.2.1"
+  },
+  "pnpm": {
+    "packageExtensions": {
+      "postcss-loader": {
+        "peerDependencies": {
+          "postcss-flexbugs-fixes": "*",
+          "postcss-preset-env": "*",
+          "postcss-normalize": "*"
+        }
+      }
+    }
   }
 }

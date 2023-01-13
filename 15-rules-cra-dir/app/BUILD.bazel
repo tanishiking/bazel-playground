@@ -28,6 +28,7 @@ bin.react_app_rewired(
             "src/**/*",
         ]
     ),
+    chdir = "app",
     env = {
         "BUILD_PATH": "./build",
         "DISABLE_ESLINT_PLUGIN": "true",
