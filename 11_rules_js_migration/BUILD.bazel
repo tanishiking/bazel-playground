@@ -3,53 +3,22 @@ load("@npm//:defs.bzl", "npm_link_all_packages")
 npm_link_all_packages(name = "node_modules")
 
 load("@aspect_bazel_lib//lib:copy_to_bin.bzl", "copy_to_bin")
-load("@npm//:react-app-rewired/package_json.bzl", "bin")
-load("@npm//:eslint/package_json.bzl", eslint_bin = "bin")
+load("@npm//:react-scripts/package_json.bzl", bin = "bin")
 load("@rules_pkg//:pkg.bzl", "pkg_zip")
 
-# Filename conventions described at
-# https://create-react-app.dev/docs/running-tests#filename-conventions
-_TESTS = [
-    "src/**/*.test.js*",
-    "src/**/*.test.ts*",
-    "src/**/*.spec.js*",
-    "src/**/*.spec.ts*",
-    "src/**/__tests__/**/*.js*",
-    "src/**/__tests__/**/*.ts*",
-]
-
-_RUNTIME_DEPS = [
-    ":node_modules/react",
-    ":node_modules/react-dom",
-    ":copy_static_files",
-]
-
-copy_to_bin(
-    name = "copy_static_files",
-    srcs = glob(
-        [
-            "public/*",
-            "src/**/*",
-        ],
-        exclude = _TESTS,
-    ) + [
-        "package.json",
-        "tsconfig.json",
-        "config-overrides.js",
-    ],
-)
-
-bin.react_app_rewired(
+bin.react_scripts(
     # Note: If you want to change the name make sure you update BUILD_PATH below accordingly
     # https://create-react-app.dev/docs/advanced-configuration/
     name = "cra",
     args = ["build"],
-    srcs = _RUNTIME_DEPS + [
-        ":node_modules/typescript",
-        ":node_modules/react-scripts",
-        ":node_modules/web-vitals",
-        ":node_modules/@types"
-    ],
+    srcs = [
+        ":node_modules",
+        "package.json",
+        "tsconfig.json",
+    ] + glob([
+        "public/*",
+        "src/**/*",
+    ]),
     env = {
         "BUILD_PATH": "./build",
         "DISABLE_ESLINT_PLUGIN": "true",
@@ -66,65 +35,6 @@ pkg_zip(
 java_import(
     name = "react_jar",
     jars = [":react_zip"],
-)
-
-copy_to_bin(
-    name = "copy_test_files",
-    srcs = glob(_TESTS),
-)
-
-bin.react_app_rewired_test(
-    name = "test",
-    args = [
-        "test",
-        # ibazel is the watch mode for Bazel when running tests
-        # Because Bazel is really a CI system that runs locally
-        "--watchAll=false",
-        # https://jestjs.io/docs/cli#--cache. Whether to use the cache. Defaults to true. Disable
-        # the cache using --no-cache. Caching is Bazel's job, we don't want non-hermeticity
-        "--no-cache",
-        # https://jestjs.io/docs/cli#--watchman. Whether to use watchman for file crawling. Defaults
-        # to true. Disable using --no-watchman. Watching is ibazel's job
-        "--no-watchman",
-        # https://jestjs.io/docs/cli#--ci. When this option is provided, Jest will assume it is
-        # running in a CI environment. This changes the behavior when a new snapshot is encountered.
-        # Instead of the regular behavior of storing a new snapshot automatically, it will fail the
-        # test and require Jest to be run with --updateSnapshot.
-        "--ci",
-        # Needed for Jest to walk the filesystem to find inputs.
-        # See https://github.com/facebook/jest/pull/9351
-        "--haste",
-        "{\\\"enableSymlinks\\\":\\ true}",
-    ],
-    data = _RUNTIME_DEPS + [
-        "copy_test_files",
-        ":node_modules/@testing-library/jest-dom",
-        ":node_modules/@testing-library/react",
-        ":node_modules/@testing-library/user-event",
-        ":node_modules/typescript",
-        ":node_modules/jest-watch-typeahead",
-    ]
-)
-
-bin.react_app_rewired_binary(
-    name = "start",
-    args = [
-        "start",
-    ],
-    data = _RUNTIME_DEPS + [
-        ":node_modules/react-scripts",
-        ":node_modules/typescript",
-        ":node_modules/web-vitals",
-    ],
-    env = {
-        "DISABLE_ESLINT_PLUGIN": "true",
-    },
-    tags = [
-        # This tag instructs ibazel to pipe into stdin a event describing actions.
-        # ibazel send EOF to stdin by default and `react-scripts start` will stop when getting EOF in stdin.
-        # So use this to prevent EOF.
-        "ibazel_notify_changes",
-    ],
 )
 
 java_binary(
