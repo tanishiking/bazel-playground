@@ -12,7 +12,12 @@ bin.react_scripts(
     name = "cra",
     args = ["build"],
     srcs = [
-        ":node_modules",
+        ":node_modules/react",
+        ":node_modules/react-dom",
+        ":node_modules/typescript",
+        ":node_modules/react-scripts",
+        ":node_modules/web-vitals",
+        ":node_modules/@types",
         "package.json",
         "tsconfig.json",
     ] + glob([
