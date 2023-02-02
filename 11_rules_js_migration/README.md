@@ -1,3 +1,25 @@
+## Bazel build without local cache takes long for `MerkleTree.build`
+
+```
+# $HOME/.bazelrc
+build --disk_cache=/path/to/.bazel-cache
+```
+
+```sh
+$ bazel build //:cra
+
+$ bazel clean
+$ bazel build --profile=profile.json //:cra
+```
+
+![Screenshot 2023-02-02 at 12 16 35](https://user-images.githubusercontent.com/9353584/216222985-1fc94186-09ab-4a09-97e4-ba1580f7b1c6.png)
+
+
+
+---
+
+<details>
+<summary>solved issue</summary>
 
 ```
 ❯ bazel build //:main
@@ -67,3 +89,4 @@ example/Main.class
 
 build directory is empty!
 
+</details>
