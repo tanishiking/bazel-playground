@@ -1,2 +1,3 @@
 coverage --combined_report=lcov
 coverage --instrumentation_filter="-/src/test/scala[/:],^//"
+coverage --extra_toolchains="//coverage_local_jacocorunner:local_jacocorunner_scala_toolchain"
