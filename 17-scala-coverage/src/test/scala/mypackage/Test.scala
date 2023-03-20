@@ -10,4 +10,8 @@ class TestSuite extends AnyFlatSpec {
   "call lambda test" should "work" in {
     assert(Foo.testLambdas == List(10))
   }
+
+  "plus" should "work" in {
+    assert(Bar(1).plus(1) == 2)
+  }
 }

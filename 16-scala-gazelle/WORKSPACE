@@ -34,3 +34,12 @@ load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains")
 
 scala_register_toolchains()
 
+
+# scala-gazelle
+
+http_archive(
+    name = "build_stack_scala_gazelle",
+    sha256 = "51ebe5b6bc079923319b2278bec7da63db6564b5aee4665710fe9a44b3415cc1",
+    strip_prefix = "scala-gazelle-9ac1882588afe2fc221717c0f625087caf4cc920",
+    urls = ["https://github.com/stackb/scala-gazelle/archive/9ac1882588afe2fc221717c0f625087caf4cc920.tar.gz"],
+)
