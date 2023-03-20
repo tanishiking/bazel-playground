@@ -1,0 +1,2 @@
+coverage --combined_report=lcov
+coverage --instrumentation_filter="-/src/test/scala[/:],^//"
