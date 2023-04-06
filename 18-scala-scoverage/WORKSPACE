@@ -50,36 +50,45 @@ load("@io_bazel_rules_scala//testing:scalatest.bzl", "scalatest_repositories", "
 scalatest_repositories()
 scalatest_toolchain()
 
+# Using scoverage 1.4.11 because scoverage 2.x is separated into smaller modules
+# and we have to provide those dependencies in a form of
+# "-Xplugin:scoverage-plugin_2.x:scoverage-domain_2.x:scoverage-serializer_2.x:scoverage-reporter_2.x"
+# which seems not possible with current rules_scala
+# see more details https://www.youtube.com/watch?v=SIkNgemGmYQ
+SCOVERAGE_VERSION = "1.4.11"
 
-load("@bazel_tools//tools/build_defs/repo:maven_rules.bzl", "maven_jar")
+RULES_JVM_EXTERNAL_TAG = "4.5"
+RULES_JVM_EXTERNAL_SHA = "b17d7388feb9bfa7f2fa09031b32707df529f26c91ab9e5d909eb1676badd9a6"
 
-maven_jar(
-    name = "scalac_scoverage_plugin",
-    artifact = "org.scoverage:scalac-scoverage-plugin_2.13.6:1.4.11",
-    repository = "https://repo1.maven.org/maven2",
+http_archive(
+    name = "rules_jvm_external",
+    strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
+    sha256 = RULES_JVM_EXTERNAL_SHA,
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
 )
 
-maven_jar(
-    name = "scalac_scoverage_runtime",
-    artifact = "org.scoverage:scalac-scoverage-runtime_2.13:1.4.11",
-    repository = "https://repo1.maven.org/maven2",
+load("@rules_jvm_external//:repositories.bzl", "rules_jvm_external_deps")
+
+rules_jvm_external_deps()
+
+load("@rules_jvm_external//:setup.bzl", "rules_jvm_external_setup")
+
+rules_jvm_external_setup()
+
+load("@rules_jvm_external//:defs.bzl", "maven_install")
+
+maven_install(
+    artifacts = [
+        "org.scoverage:scalac-scoverage-plugin_2.13.6:{}".format(SCOVERAGE_VERSION),
+        "org.scoverage:scalac-scoverage-runtime_2.13:{}".format(SCOVERAGE_VERSION),
+        "com.lihaoyi:os-lib_2.13:0.9.1",
+        "org.scala-lang.modules:scala-xml_2.13:2.1.0",
+    ],
+    repositories = [
+        "https://repo1.maven.org/maven2",
+    ],
+    maven_install_json = "@//:maven_install.json"
 )
 
-# maven_jar(
-#     name = "scalac_scoverage_domain",
-#     artifact = "org.scoverage:scalac-scoverage-domain_2.13:2.0.8",
-#     repository = "https://repo1.maven.org/maven2",
-# )
-# 
-# maven_jar(
-#     name = "scalac_scoverage_serializer",
-#     artifact = "org.scoverage:scalac-scoverage-serializer_2.13:2.0.8",
-#     repository = "https://repo1.maven.org/maven2",
-# )
-# 
-# maven_jar(
-#     name = "scalac_scoverage_reporter",
-#     artifact = "org.scoverage:scalac-scoverage-reporter_2.13:2.0.8",
-#     repository = "https://repo1.maven.org/maven2",
-# )
-# 
+load("@maven//:defs.bzl", "pinned_maven_install")
+pinned_maven_install()
