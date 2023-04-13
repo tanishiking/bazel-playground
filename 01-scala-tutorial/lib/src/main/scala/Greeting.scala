@@ -1,4 +1,4 @@
-package example
+package lib
 
 object Greeting {
   def greet: String = "Hi"
