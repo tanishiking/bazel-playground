@@ -1,5 +1,7 @@
 workspace(name = "scala_example")
 
+scala_version = "2.13.8"
+
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 skylib_version = "1.3.0"
@@ -27,23 +29,42 @@ http_archive(
 # 2.12 is a default version, other versions can be use by passing them explicitly:
 # scala_config(scala_version = "2.11.12")
 load("@io_bazel_rules_scala//:scala_config.bzl", "scala_config")
-scala_config(scala_version = "2.13.6")
+scala_config(scala_version = scala_version)
 
-load("@io_bazel_rules_scala//scala:scala.bzl", "rules_scala_setup", "rules_scala_toolchain_deps_repositories")
+# load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains")
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_repositories")
+# scala_register_toolchains()
+scala_repositories(
+    overriden_artifacts = {
+        # Change both the artifact names and sha256s.
+        "io_bazel_rules_scala_scala_library": {
+            "artifact": "org.scala-lang:scala-library:{}".format(scala_version),
+            "sha256": "a0882b82514190c2bac7d1a459872a75f005fc0f3e88b2bc0390367146e35db7",
+        },
+        "io_bazel_rules_scala_scala_compiler": {
+            "artifact": "org.scala-lang:scala-compiler:{}".format(scala_version),
+            "sha256": "b248cb6f390ee8bceb912af3da471146fdf003702a173d750f986b1d4a3362e6",
+        },
+        "io_bazel_rules_scala_scala_reflect": {
+            "artifact": "org.scala-lang:scala-reflect:{}".format(scala_version),
+            "sha256": "fdfbcc92e87f424578b303bcb47e0f55fee990c4b6da0006c9e75879d1e442e4",
+        },
+    },
+)
+
+
+# load("@io_bazel_rules_scala//scala:scala.bzl", "rules_scala_setup", "rules_scala_toolchain_deps_repositories")
 
 # loads other rules Rules Scala depends on 
-rules_scala_setup()
+# rules_scala_setup()
 
 # Loads Maven deps like Scala compiler and standard libs. On production projects you should consider 
 # defining a custom deps toolchains to use your project libs instead 
-rules_scala_toolchain_deps_repositories(fetch_sources = True)
+# rules_scala_toolchain_deps_repositories(fetch_sources = True)
 
 load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
 rules_proto_dependencies()
 rules_proto_toolchains()
-
-load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains")
-scala_register_toolchains()
 
 # optional: setup ScalaTest toolchain and dependencies
 load("@io_bazel_rules_scala//testing:scalatest.bzl", "scalatest_repositories", "scalatest_toolchain")
