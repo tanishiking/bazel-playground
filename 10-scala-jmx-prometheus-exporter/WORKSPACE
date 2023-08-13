@@ -49,7 +49,7 @@ maven_install(
     artifacts = [
         "org.scalameta:scalameta_2.13:4.5.13",
         "com.lihaoyi:pprint_2.13:0.7.3",
-        "io.prometheus.jmx:jmx_prometheus_javaagent:0.16.1",
+        "io.prometheus.jmx:jmx_prometheus_javaagent:0.20.0",
     ],
     fetch_sources = True,
     repositories = [
