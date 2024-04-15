@@ -48,7 +48,7 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 maven_install(
     artifacts = [
         "org.scalameta:scalameta_2.13:4.5.13",
-        "com.lihaoyi:pprint_2.13:0.7.3",
+        "com.lihaoyi:pprint_2.13:0.9.0",
         "com.typesafe:config:1.4.2",
     ],
     maven_install_json = "//:maven_install.json",
