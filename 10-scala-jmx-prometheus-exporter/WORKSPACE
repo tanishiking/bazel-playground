@@ -47,7 +47,7 @@ http_archive(
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 maven_install(
     artifacts = [
-        "org.scalameta:scalameta_2.13:4.5.13",
+        "org.scalameta:scalameta_2.13:4.10.2",
         "com.lihaoyi:pprint_2.13:0.7.3",
         "io.prometheus.jmx:jmx_prometheus_javaagent:0.16.1",
     ],
