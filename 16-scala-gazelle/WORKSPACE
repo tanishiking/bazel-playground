@@ -39,7 +39,7 @@ scala_register_toolchains()
 
 http_archive(
     name = "build_stack_scala_gazelle",
-    sha256 = "51ebe5b6bc079923319b2278bec7da63db6564b5aee4665710fe9a44b3415cc1",
-    strip_prefix = "scala-gazelle-9ac1882588afe2fc221717c0f625087caf4cc920",
-    urls = ["https://github.com/stackb/scala-gazelle/archive/9ac1882588afe2fc221717c0f625087caf4cc920.tar.gz"],
+    sha256 = "c6c00469fbb87f092f1cc520660d38488d343109eaa5891539907ab560cffa93",
+    strip_prefix = "scala-gazelle-401509dc2f2c9d9852d06e37bf95786b38a08db9",
+    urls = ["https://github.com/stackb/scala-gazelle/archive/401509dc2f2c9d9852d06e37bf95786b38a08db9.tar.gz"],
 )
